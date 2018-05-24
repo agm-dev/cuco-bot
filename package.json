@@ -1,0 +1,50 @@
+{
+  "name": "cuco-bot",
+  "version": "1.0.0",
+  "description": "This bot will tell you when it's time to take a shot",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "lint": "standard",
+    "validate": "npm ls",
+    "format": "standard --fix",
+    "start": "npm run dev",
+    "dev": "nodemon --exec \"npm run format && npm run test\"",
+    "prod": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agm-dev/cuco-bot.git"
+  },
+  "keywords": [
+    "cuco",
+    "shots",
+    "bot",
+    "party",
+    "drink",
+    "drank",
+    "drunk"
+  ],
+  "author": "Adrián Gonzalo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agm-dev/cuco-bot/issues"
+  },
+  "homepage": "https://github.com/agm-dev/cuco-bot#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "moment": "^2.22.1",
+    "telebot": "^1.2.6"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ],
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nodemon": "^1.17.5",
+    "precommit-hook": "^3.0.0",
+    "standard": "^11.0.1"
+  }
+}
