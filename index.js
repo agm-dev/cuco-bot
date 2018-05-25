@@ -29,10 +29,14 @@ const getIntFromText = text => {
 telegram.on('start', () => console.log('telegram bot has started'))
 
 telegram.on('/init', msg => {
-  console.log(msg)
+  // console.log(msg)
+  const userId = msg.from.id.toString()
   const data = {
     chat: msg.chat.id,
     date: msg.date
+  }
+  if (!isAdmin(userId)) {
+    return msg.reply.text(`only admins can do that :/`)
   }
   if (bot.initialized) {
     return msg.reply.text(`i have been already initialized, don't worry, you will have your shots!`)
